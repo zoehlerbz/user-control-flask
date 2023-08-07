@@ -5,4 +5,4 @@ RUN pip install --upgrade pip
 RUN pip install -r ./requirements.txt
 COPY . /src
 ENV FLASK_APP=app
-CMD ["python","python/app.py"]
+CMD ["python","site/app.py"]
