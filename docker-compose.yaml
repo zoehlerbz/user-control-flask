@@ -1,0 +1,42 @@
+version: '3'
+services:
+  web:
+    container_name: user-control-flask
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+    ports:
+      - '5000:5000'
+    env_file:
+      - ./config/python.env
+    links:
+      - mysql
+    networks:
+      - default
+  mysql:
+    container_name: user-control-mysql
+    image: mysql:8.0.30
+    ports:
+      - 3307:3306
+    volumes:
+      - persistent:/var/lib/mysql
+#      - ./dump:/docker-entrypoint-initdb.d
+    env_file:
+      - ./config/mysql.env
+    restart: always
+    networks:
+        - default
+  phpmyadmin:
+    container_name: user-control-phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    links:
+      - mysql
+    ports:
+      - 8888:80
+    env_file:
+      - ./config/phpmyadmin.env
+    restart: always
+    networks:
+        - default
+volumes:
+  persistent:
