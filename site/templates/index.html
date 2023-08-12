@@ -40,13 +40,13 @@
 
                         <!-- Email input -->
                         <div class="form-floating my-4">
-                            <input type="email" id="loginName" class="form-control" placeholder=""/>
+                            <input type="email" id="loginName" name="loginName" class="form-control" placeholder=""/>
                             <label class="form-label" for="loginName">Email or username</label>
                         </div>
 
                         <!-- Password input -->
                         <div class="form-floating mb-4">
-                            <input type="password" id="loginPassword" class="form-control" placeholder=""/>
+                            <input type="password" id="loginPassword" name="loginPassword" class="form-control" placeholder=""/>
                             <label class="form-label" for="loginPassword">Password</label>
                         </div>
 
@@ -68,7 +68,7 @@
 
                         <!-- Submit button -->
                         <div class="d-grid gap-2 col-6 mx-auto">
-                            <button class="btn btn-primary btn-block mb-4" type="submit">Sign in</button>
+                            <button class="btn btn-primary btn-block mb-4" type="submit" name="form_submit" value="submit_sign_in">Sign in</button>
                         </div>
 
                         <!-- Register buttons -->
@@ -81,39 +81,33 @@
                     tabindex="0">
                     <form action="/auth" method="post" enctype="multipart/form-data">
 
-                        <!-- Name input -->
-                        <div class="form-floating my-4">
-                            <input type="text" id="registerName" class="form-control" placeholder=""/>
-                            <label class="form-label" for="registerName">Name</label>
-                        </div>
-
                         <!-- Username input -->
-                        <div class="form-floating mb-4">
-                            <input type="text" id="registerUsername" class="form-control" placeholder=""/>
+                        <div class="form-floating my-4">
+                            <input type="text" id="registerUsername" name="registerUsername" class="form-control" placeholder=""/>
                             <label class="form-label" for="registerUsername">Username</label>
                         </div>
 
                         <!-- Email input -->
                         <div class="form-floating mb-4">
-                            <input type="email" id="registerEmail" class="form-control" placeholder=""/>
+                            <input type="email" id="registerEmail" name="registerEmail" class="form-control" placeholder=""/>
                             <label class="form-label" for="registerEmail">Email</label>
                         </div>
 
                         <!-- Password input -->
                         <div class="form-floating mb-4">
-                            <input type="password" id="registerPassword" class="form-control" placeholder=""/>
+                            <input type="password" id="registerPassword" name="registerPassword" class="form-control" placeholder=""/>
                             <label class="form-label" for="registerPassword">Password</label>
                         </div>
 
                         <!-- Repeat Password input -->
                         <div class="form-floating mb-4">
-                            <input type="password" id="registerRepeatPassword" class="form-control" placeholder=""/>
+                            <input type="password" id="registerRepeatPassword" name="registerRepeatPassword" class="form-control" placeholder=""/>
                             <label class="form-label" for="registerRepeatPassword">Repeat password</label>
                         </div>
 
                         <!-- Checkbox -->
                         <div class="form-check d-flex justify-content-center mb-4">
-                            <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck"
+                            <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" name="registerCheck"
                                 aria-describedby="registerCheckHelpText" />
                             <label class="form-check-label" for="registerCheck">
                                 I have read and agree to the terms
@@ -122,7 +116,7 @@
 
                         <!-- Submit button -->
                         <div class="d-grid gap-2 col-6 mx-auto">
-                            <button class="btn btn-primary btn-block mb-4" type="submit">Sign in</button>
+                            <button class="btn btn-primary btn-block mb-4" type="submit" name="form_submit" value="submit_sign_up">Sign in</button>
                         </div>
                         
                     </form>
