@@ -1,6 +1,7 @@
 from flask import redirect, url_for
 from src.database_management import database_management
 import re
+import bcrypt
 
 class sign_up_auth:
     def __init__(self, user, email, password, repeat_password) -> None:
@@ -12,7 +13,7 @@ class sign_up_auth:
     def user_registration(self):
         if self.user_requirements() and self.email_requirements() and self.password_requirements() and self.is_user_registered():
             db_user = database_management()
-            if db_user.new_user_registration(self.user, self.email, self.password):
+            if db_user.new_user_registration(self.user, self.email, self.encrypt(self.password)):
                 return True
             return False
         return False
@@ -69,3 +70,9 @@ class sign_up_auth:
             return False
         else:
             return True
+        
+    def encrypt(self, variable):
+        var = variable.encode('utf-8')
+        encrypted_var = bcrypt.hashpw(var, bcrypt.gensalt())
+
+        return encrypted_var
