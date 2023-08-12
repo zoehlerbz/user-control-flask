@@ -30,6 +30,7 @@ def auth():
 
             #
             #
+            # FALTA CONFERIR SE O USUÁRIO JÁ EXISTE
             # FALTA CRIPTOGRAFAR A SENHA
             # FALTA CRIAR O SISTEMA DE ENVIO DE E-MAIL E CONFIRMAÇÃO DE E-MAIL
             #

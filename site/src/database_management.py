@@ -22,6 +22,29 @@ class database_management:
             print(f"Erro ao conectar ao banco de dados: {e}")
             return None
 
+    def check_user(self, user, email):
+        conn = self.database_connetion()
+        if not conn:
+            return False
+        
+        try:
+            query = "SELECT `ID`, `username`, `email` FROM `user_registration` WHERE `username` = %s OR `email` = %s"
+
+            cursor = conn.cursor()
+            cursor.execute(query, (user, email))
+
+            if not cursor.fetchone():
+                return True     # Usuário ainda não registrado
+            else:
+                return False     # Usuário já registrado
+        
+        except mysql.connector.Error as e:
+            print(f"Erro ao conferir usuário no banco de dados: {e}")
+            return None
+        
+        finally:
+            conn.close() 
+
     def new_user_registration(self, user, email, password):
         conn = self.database_connetion()
         if not conn:

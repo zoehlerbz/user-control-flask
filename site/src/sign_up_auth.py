@@ -10,7 +10,7 @@ class sign_up_auth:
         self.repeat_password = repeat_password
 
     def user_registration(self):
-        if self.user_requirements() and self.email_requirements() and self.password_requirements():
+        if self.user_requirements() and self.email_requirements() and self.password_requirements() and self.is_user_registered():
             db_user = database_management()
             if db_user.new_user_registration(self.user, self.email, self.password):
                 return True
@@ -29,7 +29,13 @@ class sign_up_auth:
             return False
         else:
             return True
-     
+
+    def is_user_registered(self):
+        check_user = database_management()
+        if check_user.check_user(self.user, self.email):
+            return True
+        return False
+
     def email_requirements(self):
         '''
         Para o e-mail ser válido, deve ter:
