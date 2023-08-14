@@ -33,7 +33,7 @@ class sign_up_auth:
 
     def is_user_registered(self):
         check_user = database_management()
-        if check_user.check_user(self.user, self.email):
+        if check_user.check_user(self.user, self.email) is not None:
             return True
         return False
 
@@ -72,7 +72,7 @@ class sign_up_auth:
             return True
         
     def encrypt(self, variable):
-        var = variable.encode('utf-8')
-        encrypted_var = bcrypt.hashpw(var, bcrypt.gensalt())
+        # Implementar sistema de criptografia da senha
+        # ...
 
-        return encrypted_var
+        return variable
