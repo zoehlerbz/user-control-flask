@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from src.sign_up_auth import sign_up_auth
+from src.sign_in_auth import sign_in_auth
 
 app = Flask(__name__)
 
@@ -24,7 +25,13 @@ def auth():
             login_user = request.form['loginName']
             login_pass = request.form['loginPassword']
 
-            return '<h1>sign in</h1>'
+            check_user = sign_in_auth(login_user, login_pass)
+
+            if check_user.check_login():
+                return '<h1>sign in: true</h1>'
+
+            return '<h1>sign in: false</h1>'
+
 
         elif form == 'submit_sign_up':
 

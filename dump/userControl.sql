@@ -38,16 +38,6 @@ CREATE TABLE `user_registration` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Despejando dados para a tabela `user_registration`
---
-
-INSERT INTO `user_registration` (`ID`, `username`, `email`, `password`, `token_auth`, `token_creation`, `user_verified`) VALUES
-(1, 'username', 'email@email.com', 'senha123', 'ad5291f8-393d-11ee-bfe0-0242ac130004', '2023-08-12 18:25:55', 0),
-(2, 'HomerJS', 'homer.js@email.com', '123456123', '5ade8be6-394e-11ee-aea8-0242ac130004', '2023-08-12 20:25:18', 0),
-(3, 'HomerJSss', 'emailsss@email.com', 'senhasenha', 'f4efb76c-3950-11ee-b924-0242ac130003', '2023-08-12 20:43:56', 0),
-(4, 'usernameNaoRepetido', 'emailnaorepetido@email.com', '$2b$12$o/fPlpiKQ7h.B7li8Hwf5efEUYXYi1dfUBXTOpR0amK5ap7X/lWEe', 'a3ff50de-3954-11ee-9a4d-0242ac130004', '2023-08-12 21:10:18', 0);
-
---
 -- Índices para tabelas despejadas
 --
 
@@ -67,7 +57,7 @@ ALTER TABLE `user_registration`
 -- AUTO_INCREMENT de tabela `user_registration`
 --
 ALTER TABLE `user_registration`
-  MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
