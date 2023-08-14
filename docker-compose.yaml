@@ -20,7 +20,7 @@ services:
       - 3307:3306
     volumes:
       - persistent:/var/lib/mysql
-#      - ./dump:/docker-entrypoint-initdb.d
+      - ./dump:/docker-entrypoint-initdb.d
     env_file:
       - ./config/mysql.env
     restart: always
